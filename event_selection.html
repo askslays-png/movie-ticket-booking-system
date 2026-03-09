@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Selection</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@latest/dist/email.min.js"></script>
+   <script>
+      (function() {
+     email.js.init("xd-Fq6m7wXW5hA6o3");
+     })();
+   </script>
+    <link rel="stylesheet" href="event_style.css">
+</head>
+<body>
+   
+  <div class="booking-container">
+    <h2>🎬 Book Your Movie Tickets</h2>
+ 
+    <div class="form-group">
+      <label for="movie">Select Movie:</label>
+      <select id="movie">
+        <option value="Avengers">Avengers</option>
+        <option value="Frozen">Frozen</option>
+        <option value="Minions">Minions</option>
+      </select>
+    </div>
+ 
+    <div class="form-group">
+      <label for="date"> Select the show date: </label>
+      <input type="date" id="date">
+      <label for="time">Select Show Time:</label>
+      <select id="time">
+        <option value="10:00 AM">10:00 AM</option>
+        <option value="1:00 PM">1:00 PM</option>
+        <option value="4:00 PM">4:00 PM</option>
+        <option value="7:00 PM">7:00 PM</option>
+      </select>
+    </div>
+ 
+    <!-- Seat Booking -->
+    <div id="seat-container"></div>
+ 
+    <button class="btn-book" onclick="showBill()">🎟️ Book Now</button>
+  </div>
+ 
+  <div id="overlay"></div>
+  <div id="bill-popup">
+    <h3>🎫 Ticket Summary</h3>
+    <p id="bill-details"></p>
+    <button class="btn-confirm" onclick="makePayment()">💳 Proceed to Pay</button>
+    <button class="btn-close" onclick="closePopup()">❌ Close</button>
+  </div>
+ 
+     <script src="event_script.js"></script>
+</body>
+</html>
